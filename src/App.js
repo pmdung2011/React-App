@@ -1,12 +1,19 @@
 import logo from './logo.svg'
 import './App.css'
+
 import ExpenseItem from './components/ExpenseItem'
+import Expenses from './components/Expenses'
 
 function App() {
   const expenses = [
-    { id: 1, title: 'Food', amount: 301, date: new Date() },
-    { id: 2, title: 'Toilet Paper', amount: 300, date: new Date() },
-    { id: 3, title: 'Car Insurance', amount: 300, date: new Date() },
+    { id: 1, title: 'Food', amount: 500, date: new Date(2021, 6, 15) },
+    {
+      id: 2,
+      title: 'Toilet Paper',
+      amount: 20,
+      date: new Date(2021, 6, 17),
+    },
+    { id: 3, title: 'Car Insurance', amount: 300, date: new Date(2021, 6, 20) },
   ]
 
   return (
@@ -22,14 +29,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Expenses Tracker
         </a>
+        <Expenses items={expenses} />
       </header>
-      <ExpenseItem
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-      />
     </div>
   )
 }
